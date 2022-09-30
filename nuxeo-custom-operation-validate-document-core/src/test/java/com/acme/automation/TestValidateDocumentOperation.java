@@ -15,6 +15,7 @@ import org.nuxeo.ecm.automation.OperationException;
 import org.nuxeo.ecm.automation.test.AutomationFeature;
 import org.nuxeo.ecm.core.api.CoreSession;
 import org.nuxeo.ecm.core.api.DocumentModel;
+import org.nuxeo.ecm.core.api.PathRef;
 import org.nuxeo.ecm.core.test.DefaultRepositoryInit;
 import org.nuxeo.ecm.core.test.annotations.Granularity;
 import org.nuxeo.ecm.core.test.annotations.RepositoryConfig;
@@ -37,17 +38,9 @@ public class TestValidateDocumentOperation {
     @Test
     public void shouldCallTheOperation() throws OperationException {
         OperationContext ctx = new OperationContext(session);
+        ctx.setInput(session.getDocument(new PathRef("/")));
         DocumentModel doc = (DocumentModel) automationService.run(ctx, ValidateDocumentOperation.ID);
         assertEquals("/", doc.getPathAsString());
     }
 
-    @Test
-    public void shouldCallWithParameters() throws OperationException {
-        final String path = "/default-domain";
-        OperationContext ctx = new OperationContext(session);
-        Map<String, Object> params = new HashMap<>();
-        params.put("path", path);
-        DocumentModel doc = (DocumentModel) automationService.run(ctx, ValidateDocumentOperation.ID, params);
-        assertEquals(path, doc.getPathAsString());
-    }
 }
