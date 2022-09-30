@@ -39,6 +39,33 @@ mvn clean install -DskipDocker
 nuxeoctl mp-install nuxeo-custom-operation-validate-document/nuxeo-custom-operation-validate-document-package/target/nuxeo-custom-operation-validate-document-*.zip
 ```
 
+## Build and run with Docker and Docker Compose
+
+### Requirements
+
+* access to Nuxeo Nexus for the *LTS 2021 Nuxeo Docker* image
+* maven
+* docker
+* docker-compose
+
+### Build
+
+```
+mvn clean install
+```
+
+### Start Nuxeo instance
+
+* add your **Nuxeo CLID** in the `docker-compose.yml` to allow the installation of package `nuxeo-web-ui`
+* start the **Docker** container:
+```
+docker-compose up
+```
+* stop the **Docker** container:
+```
+docker-compose down -v
+```
+
 ## Support
 
 **These features are not part of the Nuxeo Production platform, they are not supported**
