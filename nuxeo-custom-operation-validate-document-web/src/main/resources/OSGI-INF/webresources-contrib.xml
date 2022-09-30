@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<component name="com.acme.webui.webresourcescontrib">
+
+  <extension target="org.nuxeo.ecm.platform.WebResources" point="resources">
+
+    <resource name="nuxeo-custom-operation-validate-document-bundle.html" type="import" shrinkable="false">
+      <uri>/ui/nuxeo-custom-operation-validate-document-bundle.html</uri>
+    </resource>
+  </extension>
+
+  <extension target="org.nuxeo.ecm.platform.WebResources" point="bundles">
+    <bundle name="web-ui">
+      <resources append="true">
+        <resource>nuxeo-custom-operation-validate-document-bundle.html</resource>
+      </resources>
+    </bundle>
+
+  </extension>
+
+</component>

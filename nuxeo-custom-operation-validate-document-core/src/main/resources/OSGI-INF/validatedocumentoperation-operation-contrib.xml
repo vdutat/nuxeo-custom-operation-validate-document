@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<component name="com.acme.automation.operation.validatedocumentoperation">
+
+  <extension point="operations" target="org.nuxeo.ecm.core.operation.OperationServiceComponent">
+    <operation class="com.acme.automation.ValidateDocumentOperation"/>
+  </extension>
+
+</component>
