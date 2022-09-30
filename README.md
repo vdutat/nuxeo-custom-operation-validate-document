@@ -30,7 +30,7 @@ Building requires the following software:
 git clone ...
 cd nuxeo-custom-operation-validate-document
 
-mvn clean install
+mvn clean install -DskipDocker
 ```
 
 ## Installation
